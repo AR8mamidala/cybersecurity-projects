@@ -1,4 +1,5 @@
 # cybersecurity-projects
+
 This repository contains independent cybersecurity projects that I am developing to build practical skills in Python, cybersecurity, and security tools.
 
 ## Projects
@@ -40,3 +41,49 @@ The project was tested by:
 - Checking a second file
 - Checking a file that does not exist
 
+---
+
+### Security Log Analyser
+
+A Python-based security log analyser that identifies suspicious failed login activity by analysing IP addresses and login times.
+
+#### Features
+
+- Reads a security log line by line
+- Identifies failed login attempts
+- Groups failed attempts by IP address
+- Counts failed login attempts for each IP
+- Allows the user to set a suspicious attempt threshold
+- Calculates the time between consecutive login attempts
+- Allows the user to set a rapid-login threshold
+- Detects login activity that may indicate a brute-force attack
+
+#### How It Works
+
+The program reads `security.log` line by line and identifies entries containing failed login attempts. It extracts the IP address, date and time from each entry and stores this information in a dictionary.
+
+The program then counts the failed attempts associated with each IP address and calculates the time differences between consecutive attempts. The user can set thresholds for both the number of failed attempts and the time between attempts. IP addresses exceeding these thresholds are reported as suspicious.
+
+The current output displays the date and time of the most recent failed login recorded for each IP address.
+
+#### Testing
+
+The `security.log` file used for testing was AI-generated test data designed to contain different patterns of failed login activity.
+
+The project was tested by:
+
+- Counting the total number of failed login attempts
+- Grouping failed attempts by IP address
+- Testing different failed-attempt thresholds
+- Testing different rapid-login thresholds
+- Detecting an IP address with rapid consecutive attempts
+- Confirming that IP addresses below the configured threshold were not flagged
+- Testing the `None detected` output when no suspicious activity was found
+
+#### Technologies Used
+
+- Python
+- `datetime`
+- Dictionaries
+- File handling
+- String processing
