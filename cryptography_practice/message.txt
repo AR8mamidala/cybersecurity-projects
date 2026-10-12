@@ -1,0 +1,1 @@
+This is my first file encryption project. I am learning how AES-CBC protects data.
